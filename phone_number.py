@@ -156,3 +156,30 @@ print(mo.group())
 noNewlineRegex = re.compile('.*',re.DOTALL)
 mo = noNewlineRegex.search('hey what is there to eat?.\nFor dinner of course!\nlasanga yum!')
 print(mo.group())
+# REGEX Symbols
+# The ? matches zero or one of the preceding group.
+# The * matches zero or more of the preceding group.
+# The + matches one or more of the preceding group.
+# The {n} matches exactly n of the preceding group.
+# The {n,} matches n or more of the preceding group.
+# The {,m} matches 0 to m of the preceding group.
+# The {n,m} matches at least n and at most m of the preceding group.
+# {n,m}? or *? or +? performs a non-greedy match of the preceding group.
+# ^spam means the string must begin with spam.
+# spam$ means the string must end with spam.
+# The . matches any character, except newline characters.
+# \d, \w, and \s match a digit, word, or space character, respectively.
+# \D, \W, and \S match anything except a digit, word, or space character, respectively.
+# [abc] matches any character between the brackets (such as a, b, or c).
+# [^abc] matches any character that isn’t between the brackets.
+
+# Case Matching
+caseSensitive1 = re.compile('robocop', re.I)
+caseSensitive2 = caseSensitive1.search('ROBOCOP')
+caseSensitive3 = caseSensitive1.search('robOcop')
+caseSensitive4 = caseSensitive1.search('RobocOp')
+print(caseSensitive2.group())
+print(caseSensitive3.group())
+print(caseSensitive4.group())
+
+
