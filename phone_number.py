@@ -45,9 +45,19 @@ mo3 = batRegex.search('Batmobile lost a wheel')
 print(mo3.group())
 print(mo3.group(1))
 
-
+# Matching Zero or More with the Star
 nameObj = re.compile(r'Anisa(na)*Mohamed')
 naNa = nameObj.search('The AnisaMohamed is my weird name')
 naNa2 = nameObj.search('The AnisanananananaMohamed is my weird name')
 print(naNa.group())
 print(naNa2.group())
+
+# Matching One or More with the Plus
+nameObj = re.compile(r'Anisa(na)+Mohamed')
+naNa = nameObj.search('The AnisanaMohamed is my weird name')
+naNa2 = nameObj.search('The AnisanananananaMohamed is my weird name')
+naNa3 = nameObj.search('The AnisaMohamed is my weird name')
+
+print(naNa.group())
+print(naNa2.group())
+print(naNa3 == None)
