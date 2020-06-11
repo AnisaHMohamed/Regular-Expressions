@@ -1,5 +1,6 @@
 # Import the regex module with import re.
 import re
+
 # Create a Regex object with the re.compile() function using a raw string
 phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
 # Pass the string you want to search into the Regex object’s search() method to return a Match object
@@ -68,3 +69,13 @@ hi = repPattern.search('Hello hiHellohihihehe')
 print(hi.group())
 hi = repPattern.search('Hello hiHellohihehihehi')
 print(hi == None)
+
+# Greedy and Non-greedy Matching
+greedyPattern = re.compile(r'(He){3,5}')
+greed = greedyPattern.search('HezzheHeHeHeHeHeHE')
+print(greed.group())
+
+nonGreedyPattern = re.compile(r'(He){3,5}?')
+noGreed = nonGreedyPattern.search('ezzheHeHeHeHeHeHE')
+print(noGreed.group())
+
