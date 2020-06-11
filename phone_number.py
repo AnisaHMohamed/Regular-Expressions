@@ -182,4 +182,7 @@ print(caseSensitive2.group())
 print(caseSensitive3.group())
 print(caseSensitive4.group())
 
-
+# Substitution by patterns
+namePattern = re.compile(r'Private Investigator \w+')
+mo = namePattern.sub('*****', 'Private Investigator Anisa reported back to Private Investigator Mohamed.')
+print(mo)
