@@ -107,3 +107,43 @@ print(myNumGrouping)
 vowelRegex = re.compile(r'[aeiouAEIOU]')
 allVowels = vowelRegex.findall('RoboCop eats baby food. BABY FOOD.')
 print(allVowels)
+
+excludeVowels = re.compile(r'[^aeiouAEIOU]')
+constants = excludeVowels.findall('RoboCop eats baby food. BABY FOOD.')
+print(constants)
+
+
+startsWithHello = re.compile(r'^Hello')
+mo = startsWithHello.search('Hello guys!')
+print(mo)
+mo = startsWithHello.search('He said hello.')
+print(mo == None)
+# Ends with pattern
+endsWithDigit = re.compile(r'\d$')
+mo = endsWithDigit.search('I end with the lucky number 7')
+print(mo)
+mo = endsWithDigit.search('I end with the lucky number 7!!')
+
+print(mo == None)
+
+# The Wildcard Character
+wildCardPattern = re.compile(r'.all')
+allMatches = wildCardPattern.findall('Walk to the wall and call before you fall because you are tall')
+print(allMatches)
+
+# Matching Everything with Dot-Star
+careerExperiencePattern = re.compile(r'Job:(.*) Experience:(.*)')
+mo = careerExperiencePattern.search('Job:Developer Experience:10 years')
+print(mo.group(1))
+print(mo.group(2))
+
+
+# non greedy matching dot star
+nonGreedyPattern = re.compile(r'\(.*?\)')
+mo = nonGreedyPattern.search('(hey what is there to eat?) For dinner of course!)')
+print(mo.group())
+# greedy matching dot star
+nonGreedyPattern = re.compile(r'\(.*\)')
+mo = nonGreedyPattern.search('(hey what is there to eat?) For dinner of course!)')
+print(mo.group())
+
