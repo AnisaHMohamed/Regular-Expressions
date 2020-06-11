@@ -79,3 +79,31 @@ nonGreedyPattern = re.compile(r'(He){3,5}?')
 noGreed = nonGreedyPattern.search('ezzheHeHeHeHeHeHE')
 print(noGreed.group())
 
+# The findall() Method finds all instances unlike search which finds the first instances without groupings
+phoneNumRegex = re.compile(r'\d{3}-\d{3}-\d{4}')
+# Pass the string you want to search into the Regex object’s search() method to return a Match object
+myNumGrouping = phoneNumRegex.findall('My number is 949-459-4012 and my alternate is 312-345-6701')
+print(myNumGrouping)
+
+phoneNumRegex = re.compile(r'(\d{3})-(\d{3})-(\d{4})')
+# Pass the string you want to search into the Regex object’s search() method to return a Match object
+myNumGrouping = phoneNumRegex.findall('My number is 949-459-4012 and my alternate is 312-345-6701')
+print(myNumGrouping)
+
+# \d
+# Any numeric digit from 0 to 9.
+# \D
+# Any character that is not a numeric digit from 0 to 9.
+# \w
+# Any letter, numeric digit, or the underscore character. (Think of this as matching “word” characters.)
+# \W
+# Any character that is not a letter, numeric digit, or the underscore character.
+# \s
+# Any space, tab, or newline character. (Think of this as matching “space” characters.)
+# \S
+# Any character that is not a space, tab, or newline.
+# [a-zA-Z]
+# matches letters only
+vowelRegex = re.compile(r'[aeiouAEIOU]')
+allVowels = vowelRegex.findall('RoboCop eats baby food. BABY FOOD.')
+print(allVowels)
