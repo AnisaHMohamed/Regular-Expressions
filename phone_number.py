@@ -61,3 +61,10 @@ naNa3 = nameObj.search('The AnisaMohamed is my weird name')
 print(naNa.group())
 print(naNa2.group())
 print(naNa3 == None)
+
+# Matching Specific Repetitions with Braces
+repPattern = re.compile(r'(hi){2}')
+hi = repPattern.search('Hello hiHellohihihehe')
+print(hi.group())
+hi = repPattern.search('Hello hiHellohihehihehi')
+print(hi == None)
