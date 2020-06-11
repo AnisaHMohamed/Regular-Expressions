@@ -44,3 +44,10 @@ batRegex = re.compile(r'Bat(man|mobile|copter|bat)')
 mo3 = batRegex.search('Batmobile lost a wheel')
 print(mo3.group())
 print(mo3.group(1))
+
+
+nameObj = re.compile(r'Anisa(na)*Mohamed')
+naNa = nameObj.search('The AnisaMohamed is my weird name')
+naNa2 = nameObj.search('The AnisanananananaMohamed is my weird name')
+print(naNa.group())
+print(naNa2.group())
