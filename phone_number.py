@@ -147,3 +147,12 @@ nonGreedyPattern = re.compile(r'\(.*\)')
 mo = nonGreedyPattern.search('(hey what is there to eat?) For dinner of course!)')
 print(mo.group())
 
+# Matching Newlines with the Dot Character
+# without newlines
+noNewlineRegex = re.compile('.*')
+mo = noNewlineRegex.search('hey what is there to eat?.\nFor dinner of course!\nlasanga yum!')
+print(mo.group())
+# include newlines
+noNewlineRegex = re.compile('.*',re.DOTALL)
+mo = noNewlineRegex.search('hey what is there to eat?.\nFor dinner of course!\nlasanga yum!')
+print(mo.group())
